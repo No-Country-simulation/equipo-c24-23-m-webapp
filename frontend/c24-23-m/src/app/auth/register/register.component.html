@@ -1,5 +1,5 @@
 <!-- Section: Design Block -->
-<section class="text-center">
+<section class="text-center" >
     <!-- Background image -->
     <div class="p-5 bg-image" style="
           background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
@@ -16,18 +16,21 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
             <h2 class="fw-bold mb-5">Registrarme</h2>
-            <form>
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example1" class="form-control" />
+                    <input type="text" class="form-control" formControlName="name" />
+                    <div class="text-danger" *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
+                      Un nombre es obligatorio
+                   </div>
                     <label class="form-label" for="form3Example1">Nombre</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example2" class="form-control" />
+                    <input type="text" class="form-control" formControlName="apellido"/>
                     <label class="form-label" for="form3Example2">Apellido</label>
                   </div>
                 </div>
@@ -37,13 +40,19 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example1" class="form-control" />
-                    <label class="form-label" for="form3Example1">Calle</label>
+                    <input type="text" class="form-control" formControlName="calle"/>
+                    <div class="text-danger" *ngIf="registerForm.controls['calle'].invalid && registerForm.controls['calle'].touched">
+                      La calle es obligatoria
+                   </div>
+                    <label class="form-label">Calle</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
-                    <input type="number" id="form3Example2" class="form-control" />
+                    <input type="number" class="form-control" formControlName="enumeracion"/>
+                    <div class="text-danger" *ngIf="registerForm.controls['enumeracion'].invalid && registerForm.controls['enumeracion'].touched">
+                      La enumeracion es obligatoria
+                   </div>
                     <label class="form-label" for="form3Example2">Altura</label>
                   </div>
                 </div>
@@ -51,13 +60,19 @@
 
               <!-- telefono -->
               <div data-mdb-input-init class="form-outline mb-4">
-                <input type="numebr" id="form3Example3" class="form-control" />
+                <input type="number"  class="form-control" formControlName="telefono"/>
+                <div class="text-danger" *ngIf="registerForm.controls['telefono'].invalid && registerForm.controls['telefono'].touched">
+                  El telefono debe tener al menos 6 caracteres
+               </div>
                 <label class="form-label" for="form3Example3">Telefono</label>
               </div>
   
               <!-- Email input -->
               <div data-mdb-input-init class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" />
+                <input type="email"  class="form-control" formControlName="email"/>
+                <div class="text-danger" *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+                   Ingresa un email válido
+                </div>
                 <label class="form-label" for="form3Example3">Email</label>
               </div>
 
@@ -66,25 +81,30 @@
   
               <!-- Password input -->
               <div data-mdb-input-init class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" />
+                <input type="password" class="form-control" formControlName="password" />
+                <div class="text-danger" *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+                   La contraseña debe tener al menos 8 caracteres
+                </div>
                 <label class="form-label" for="form3Example4">Contraseña</label>
               </div>
               
   
               <!-- tipo de usuario -->
-
-              <form class="mb-5">
                 <label>
-                  <input type="radio" [(ngModel)]="userType" name="userType" value="usuario" /> Usuario
+                  <input type="radio" name="userType" value="usuario" formControlName="userType" value="usuario"/> Usuario
                 </label><br>
                 <label>
-                  <input type="radio" [(ngModel)]="userType" name="userType" value="repartidor" /> Repartidor
+                  <input type="radio" name="userType" value="repartidor" formControlName="userType" value="repartidor"/> Repartidor
                 </label><br>
-              </form>
-              
+                <label>
+                  <input type="radio" name="userType" value="restaurante" formControlName="userType" value="restaurante"/> Restaurante
+                </label><br>
+                <div class="text-danger" *ngIf="registerForm.controls['userType'].invalid && registerForm.controls['userType'].touched">
+                  El tipo de usuario es obligatorio
+               </div>
   
               <!-- Submit button -->
-              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+              <button type="submit" [disabled]="registerForm.invalid" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mt-4">
                 Registrarme
               </button> 
   
@@ -94,4 +114,3 @@
       </div>
     </div>
   </section>
-  <!-- Section: Design Block -->

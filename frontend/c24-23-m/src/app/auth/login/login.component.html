@@ -1,0 +1,56 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          height: 300px;
+          "></div>
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong bg-body-tertiary" style="
+          margin-top: -100px;
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Ingresar</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              
+
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email"  class="form-control" formControlName="email"/>
+                <div class="text-danger" *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+                   Ingresa un email válido
+                </div>
+                <label class="form-label" for="form3Example3">Email</label>
+              </div>
+
+               
+  
+  
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" class="form-control" formControlName="password" />
+                <div class="text-danger" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                   La contraseña debe tener al menos 8 caracteres
+                </div>
+                <label class="form-label" for="form3Example4">Contraseña</label>
+              </div>
+              
+  
+              
+  
+              <!-- Submit button -->
+              <button type="submit" [disabled]="loginForm.invalid" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mt-4">
+                Ingresar
+              </button> 
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
