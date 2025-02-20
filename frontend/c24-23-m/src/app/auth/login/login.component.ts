@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -26,7 +27,7 @@ export class LoginComponent {
         console.log(this.loginForm.value);    //Aca se enviarian los datos al backend
       }
       else{
-        console.log("Formualrio Invalido")
+        console.log("Formulario Invalido")
       }
     }
 
