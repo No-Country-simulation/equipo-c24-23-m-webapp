@@ -7,5 +7,8 @@ import { Component} from '@angular/core';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+signInWithGoogle() {
+throw new Error('Method not implemented.');
+}
 
 }
