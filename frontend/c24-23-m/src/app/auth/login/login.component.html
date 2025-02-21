@@ -1,7 +1,13 @@
-<button
-  class="btn btn-light d-flex align-items-center border border-secondary rounded-3 shadow-sm"
-  (click)="signInWithGoogle()"
->
-  <img src="https://developers.google.com/identity/images/g-logo.png" width="20" height="20" class="me-2" />
-  Login con Google
-</button>
+<div class="container">
+  <div class="or-container">
+    <div class="line-separator"></div>
+    <div class="or-label">or</div>
+    <div class="line-separator"></div>
+  </div>
+  <div class="row">
+    <button class="btn btn-lg btn-google btn-block text-uppercase btn-outline" (click)="login()">
+        <img src="https://img.icons8.com/color/22/000000/google-logo.png"> Sing in Google
+    </button>
+  </div>
+
+</div>
