@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class RegisterComponent {
 
-  registerForm!: FormGroup;
+  registerForm: FormGroup;
 
   constructor(private fb: FormBuilder) { 
     this.registerForm = this.fb.group({
