@@ -19,7 +19,7 @@ export class UsersController {
   }
 
   @MessagePattern('findOneUser')
-  findOne(@Payload() id: number) {
+  findOne(@Payload() id: string) {
     return this.usersService.findOne(id);
   }
 
@@ -29,7 +29,7 @@ export class UsersController {
   }
 
   @MessagePattern('removeUser')
-  remove(@Payload() id: number) {
+  remove(@Payload() id: string) {
     return this.usersService.remove(id);
   }
 }
