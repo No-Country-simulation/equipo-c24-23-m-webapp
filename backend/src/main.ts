@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import helmet from 'helmet';
+import { HttpExceptionFilter } from './common/expctions/http-exception.filter';
 
 async function bootstrap() {
   const logger = new Logger('Boostrap');
@@ -13,15 +14,14 @@ async function bootstrap() {
       crossOriginResourcePolicy: false,
     }),
   );
-
+  app.setGlobalPrefix('api');
+  app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: false,
     }),
   );
-
-  app.setGlobalPrefix('api');
 
   logger.log('');
   logger.log(`🚀 App running on port ${process.env.PORT}`);
