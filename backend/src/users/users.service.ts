@@ -1,15 +1,20 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { CreateUserDto } from './dto';
+import { UpdateUserDto } from './dto';
 import { InjectModel } from '@nestjs/mongoose';
-import { User } from './schema/user.schema';
+import { User } from './schema';
 import { Model } from 'mongoose';
+import { Direccion } from './schema';
+import { CreateDireccionDto } from './dto';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectModel(User.name) private userModel: Model<User>) {}
+  constructor(@InjectModel(User.name) private userModel: Model<User>, @InjectModel(Direccion.name) private direccionModel: Model<Direccion>) {}
   async create(createUserDto: CreateUserDto) {
-    return this.userModel.create(createUserDto);
+    const direccion: CreateDireccionDto = createUserDto.direccion;
+    const direccionCreada = await this.direccionModel.create(direccion);
+    const user = { ...createUserDto, direccion: direccionCreada._id, estado: true};
+    return this.userModel.create(user);
   }
 
   async findAll() {
