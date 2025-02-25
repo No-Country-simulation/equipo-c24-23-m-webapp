@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { AuthGoogleService } from '../../core/services/auth-google.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private authGoogleService: AuthGoogleService,private fb: FormBuilder) { 
     this.registerForm = this.fb.group({
       
       name: ['',[Validators.required]],
@@ -36,6 +37,9 @@ export class RegisterComponent {
     else{
       console.log("Formulario Invalido")
     }
+  }
+  loginG() {
+    this.authGoogleService.login();
   }
 
 }
