@@ -2,6 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose from 'mongoose';
 import { Document } from 'mongoose';
 import { Direccion } from './direccion.schema';
+import { TipoUsuario } from '../enum/tipo-usuario.enum';
 
 @Schema()
 export class User extends Document {
@@ -15,7 +16,7 @@ export class User extends Document {
   contraseña: string;
 
   @Prop({ required: true })
-  tipo_usuario: string;
+  tipo_usuario: TipoUsuario;
 
   @Prop()
   estado: boolean;

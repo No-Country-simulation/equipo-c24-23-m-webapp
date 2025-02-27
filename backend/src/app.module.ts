@@ -3,6 +3,7 @@ import { UsersModule } from './users/users.module';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
 import { RestauranteModule } from './restaurante/restaurante.module';
+import { RepartidoresModule } from './repartidores/repartidores.module';
 
 
 @Module({
@@ -12,7 +13,8 @@ import { RestauranteModule } from './restaurante/restaurante.module';
     }),
     DatabaseModule,
     UsersModule,
-    RestauranteModule
+    RestauranteModule,
+    RepartidoresModule
   ],
   controllers: [],
   providers: [],
