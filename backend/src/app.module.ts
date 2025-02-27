@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { UsersModule } from './users/users.module';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
+import { RestauranteModule } from './restaurante/restaurante.module';
 
 
 @Module({
@@ -10,7 +11,8 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     DatabaseModule,
-    UsersModule
+    UsersModule,
+    RestauranteModule
   ],
   controllers: [],
   providers: [],

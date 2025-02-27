@@ -23,7 +23,7 @@ export class UsersService {
         direccion: direccionCreada._id,
         estado: true,
       });
-      return await usuarioCreado.save();
+      return (await this.userModel.create(usuarioCreado)).populate('direccion');
     } catch (error) {
       throw new Error('Error al crear usuario: ' + error.message);
     }
@@ -48,9 +48,11 @@ export class UsersService {
   async update(id: string, updateUserDto: UpdateUserDto) {
     try{
       const user = await this.userModel.findById(id);
+      
       if (!user) {
         throw new NotFoundException('Usuario no encontrado');
       }
+
       if (!updateUserDto.direccion){
         return this.userModel.findByIdAndUpdate(id, updateUserDto, { new: true }).populate('direccion');
       }else{
@@ -58,11 +60,13 @@ export class UsersService {
           user.direccion,
           updateUserDto.direccion
         );
+
         const usuarioActualizado = await this.userModel.findByIdAndUpdate(
           id,
           { ...updateUserDto, direccion: direccionActualizada._id },
           { new: true }
         ).populate('direccion');
+        
         return [usuarioActualizado];
       }
     }catch(error){
