@@ -1,0 +1,6 @@
+export enum TipoUsuario{
+    ADMIN = "ADMIN",
+    CLIENTE = "CLIENTE",
+    REPARTIDOR = "REPARTIDOR",
+    RESTAURANTE = "RESTAURANTE"
+}
