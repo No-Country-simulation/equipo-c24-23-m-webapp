@@ -4,6 +4,8 @@ import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
 import { RestauranteModule } from './restaurante/restaurante.module';
 import { RepartidoresModule } from './repartidores/repartidores.module';
+import { PedidosModule } from './pedidos/pedidos.module';
+import { ProductosModule } from './productos/productos.module';
 
 
 @Module({
@@ -14,7 +16,9 @@ import { RepartidoresModule } from './repartidores/repartidores.module';
     DatabaseModule,
     UsersModule,
     RestauranteModule,
-    RepartidoresModule
+    RepartidoresModule,
+    PedidosModule,
+    ProductosModule
   ],
   controllers: [],
   providers: [],
