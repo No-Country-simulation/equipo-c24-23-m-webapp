@@ -1,0 +1,42 @@
+<nav class="navbar navbar-dark bg-light fixed-top position-relative">
+    <div class="container-fluid">
+      <a class="navbar-brand p-3" href="#"><img src="assets/logoSB.png" alt=""></a>
+
+      <p class="text-dark fs-5 fixed-center position-absolute top-50 start-50 translate-middle fw-semibold">Bienvenido {{this.nombreUsuario}}</p>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span><img src="assets/toggle.svg" alt=""></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+            <ng-container *ngIf="userRole === 'cliente'"> 
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-cliente">Inicio</a></li>
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/pedidos-cliente">Pedidos</a></li>
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/restaurantes-clientes">Restaurantes</a></li>
+              </ng-container>
+        
+              <ng-container *ngIf="userRole === 'restaurante'">
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-restaurantes">Inicio</a></li>
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/pedidos-restaurante">Pedidos</a></li>
+              </ng-container>
+        
+              <ng-container *ngIf="userRole === 'repartidor'">
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-repartidor">Inicio</a></li>
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/pedidos-repartidor">Pedidos</a></li>
+              </ng-container>
+        
+              <li><button (click)="logout()" class="nav-link mx-5 mt-5 text-light fs-3 fw-semibold botonSalir py-2 px-4">Salir</button></li>
+              
+            
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </nav>

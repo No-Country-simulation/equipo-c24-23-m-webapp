@@ -1,0 +1,32 @@
+.portada{
+    width: 50vw;
+    height: 100%;
+}
+.first-section{
+    background-color:#E7D9CB;
+}
+.btn-pedidos{
+    background-color: #F69309;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: 5rem;
+    margin-left: 6rem;
+}
+h1{
+    font-size: 80px;
+    font-weight: bolder;
+    font-style: italic;
+}
+.saborea{
+    color: #F69309;
+}
+.despues{
+    color: white;
+}
+.banner{
+    background-color: #303030;
+}
+.banner p {
+    font-weight: bolder;
+    font-style: italic;
+}
