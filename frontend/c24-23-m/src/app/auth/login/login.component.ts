@@ -1,12 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
-<<<<<<< Updated upstream
-import { AuthGoogleService } from '../../core/services/auth-google.service';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
-=======
 import { AuthGoogleService } from '../../core/services/auth-google.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
->>>>>>> Stashed changes
 import { RouterLink } from '@angular/router';
 
 @Component({
