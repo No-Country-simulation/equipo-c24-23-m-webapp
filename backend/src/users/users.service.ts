@@ -43,7 +43,7 @@ export class UsersService {
   }
 
   async findAll(): Promise<User[]> {
-    return this.userModel.find();
+    return this.userModel.find().populate('direccion').exec();
   }
 
   async findOne(id: string): Promise<User> {

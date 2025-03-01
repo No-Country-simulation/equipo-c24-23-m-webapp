@@ -1,6 +1,7 @@
 import {
   IsArray,
   IsNotEmpty,
+  IsObject,
   IsString,
   ValidateNested,
 } from 'class-validator';
@@ -16,8 +17,8 @@ export class CreatePedidoDto {
   @IsNotEmpty()
   cliente_id: string;
 
-  @IsArray()
+  @IsObject()
   @ValidateNested({ each: true })
   @Type(() => ProductoDto)
-  productos: ProductoDto[];
+  producto: ProductoDto;
 }

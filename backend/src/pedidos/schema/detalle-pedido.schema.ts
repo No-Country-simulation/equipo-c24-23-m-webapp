@@ -16,7 +16,7 @@ export class DetallePedido extends Document{
     precio_unitario: number;
 
     @Prop({required: true})
-    total: number;
+    subtotal: number;
 }
 
 export const DetallePedidoSchema = SchemaFactory.createForClass(DetallePedido);

@@ -1,7 +1,9 @@
 export enum EstadoPedido{
-    PENDIENTE = "PENDIENTE",
-    PREPARACION = "PREPARACION",
-    COMPLETADO = "COMPLETADO",
-    ENVIADO = "ENVIADO",
-    ENTREGADO = "ENTREGADO"
+    PENDIENTE = "Pendiente",
+    PREPARACION = "Preparacion",
+    COMPLETADO = "Completado",
+    ENVIADO = "Enviado",
+    ENTREGADO = "Entregado",
+    RECHAZADO = "Rechazado",
+    CANCELADO = "Cancelado"
 }

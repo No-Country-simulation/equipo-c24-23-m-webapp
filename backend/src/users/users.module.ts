@@ -11,5 +11,6 @@ import { Direccion, DireccionSchema } from './schema/direccion.schema';
   ],
   controllers: [UsersController],
   providers: [UsersService],
+  exports: [MongooseModule],
 })
 export class UsersModule {}
