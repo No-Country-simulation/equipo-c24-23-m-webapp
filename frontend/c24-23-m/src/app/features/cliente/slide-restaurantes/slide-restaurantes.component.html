@@ -1,0 +1,39 @@
+<section class="container-fluid m-0 p-0">
+
+    <div class="container-fluid locales-banner py-4 px-5 m-0 banner">
+        <p class="text-light fs-1 ">Locales</p>
+    </div>
+
+    <div class="container-fluid my-0 mx-0">
+        <div id="restaurantCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+          <div class="carousel-inner py-5">
+            
+            <div *ngFor="let group of getRestaurantGroups(); let first = first" class="carousel-item" [ngClass]="{'active': first}">
+              <div class="row">
+                <div *ngFor="let restaurant of group" class="col-md-3">
+                  <div class="card restaurant-card" (click)="goToMenu(restaurant.id)">
+                    <img src="assets/restaurant-img.svg" class="card-img-top img-restaurante" [alt]="restaurant.name">
+                    <!-- [src]="restaurant.image" -->
+                    <div class="card-body text-center">
+                      <h5 class="card-title">{{ restaurant.name }}</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+      
+          <!-- Controles del Carousel -->
+          <button class="carousel-control-prev btn-carousel p-3 mx-5 btn-carousel-res" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next btn-carousel p-3 mx-5 btn-carousel-res" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+
+        </div>
+      </div>
+      
+
+</section>

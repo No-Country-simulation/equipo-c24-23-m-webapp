@@ -42,22 +42,3 @@ h1{
     background-color: white;
     border-radius: 50%;
 }
-
-.img-restaurante{
-    width: auto;
-    height: min-content;
-    border: none;
-    border-radius: 10px;
-}
-.restaurant-card {
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-.restaurant-card:hover {
-    transform: scale(1.05);
-  }
-
-.btn-carousel-res{
-    margin-top: 200px !important;
-}

@@ -1,0 +1,62 @@
+<section class="container-fluid banner position-relative text-center">
+    <h1 class="p-5 position-absolute top-50 start-50 translate-middle text-light restaurant-name">{{restaurantName}}</h1>
+    <img class="img-banner img-fluid" src="assets/banner-img-res.svg" alt="">
+</section>
+
+
+
+<!-- 
+<div class="container mt-4">
+    <div class="row">
+      <div *ngFor="let product of products" class="col-md-4">
+        <div class="card">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">${{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <section class="container-fluid m-0 p-0">
+    <div class="container-fluid my-5 mx-0">
+        <div id="productCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div *ngFor="let group of getProductGroups(); let first = first" class="carousel-item"
+                    [ngClass]="{'active': first}">
+                    <div class="row">
+                        <div *ngFor="let product of group" class="col-md-4">
+                            <div class="card d-flex flex-row">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <h4 class="card-title">$ {{ product.price }}</h4>
+                                    <button class="btn btn-success fw-semibold fs-5">Comprar</button>
+                                </div>
+                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3" [alt]="product.name">  
+                                <!-- [src]="product.image" -->
+
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controles del Carousel -->
+            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button" data-bs-target="#productCarousel" data-bs-slide="prev" >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+</section>
