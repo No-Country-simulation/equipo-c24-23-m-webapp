@@ -7,23 +7,9 @@ import { MongooseModule } from '@nestjs/mongoose';
     MongooseModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
-        try {
-          const uri = `mongodb://${configService.getOrThrow<string>(
-            'MONGO_INITDB_ROOT_USERNAME',
-          )}:${configService.getOrThrow<string>(
-            'MONGO_INITDB_ROOT_PASSWORD',
-          )}@${configService.getOrThrow<string>('MONGO_HOST')}:${configService.getOrThrow<string>('MONGO_PORT')}/${configService.getOrThrow<string>('MONGO_INITDB_DATABASE')}?authSource=admin`;
-
-          Logger.log('✅ Conexión a MongoDB exitosa.', 'DatabaseModule');
-          return { uri };
-        } catch (error) {
-          Logger.error(
-            '❌ Error al conectar con MongoDB:',
-            error,
-            'DatabaseModule',
-          );
-          throw error;
-        }
+        const uri = configService.getOrThrow<string>('MONGO_URI');
+        Logger.log('✅ Conectado a MongoDB Atlas.', 'DatabaseModule');
+        return { uri };
       },
     }),
   ],
