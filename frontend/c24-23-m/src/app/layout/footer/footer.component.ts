@@ -10,6 +10,6 @@ import { RouterLink } from '@angular/router';
 })
 export class FooterComponent {
 
-  userRole:string = 'cliente'  //puede ser restaurante o repartidor
+  userRole:string = 'restaurante'  //puede ser restaurante o repartidor
 
 }

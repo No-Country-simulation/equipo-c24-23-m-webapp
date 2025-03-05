@@ -45,7 +45,7 @@
                                     <h5 class="card-title">{{ product.name }}</h5>
                                     <p class="card-text">{{ product.description }}</p>
                                     <h4 class="card-title">$ {{ product.price }}</h4>
-                                    <button class="btn btn-success fw-semibold fs-5">Comprar</button>
+                                    <button class="btn btn-success fw-semibold fs-5" routerLink="/confirmar/{{product.id}}">Comprar</button>
                                 </div>
                                 <img src="assets/burger-product.svg" class="card-img-top product-img m-3" [alt]="product.name">  
                                 <!-- [src]="product.image" -->

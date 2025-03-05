@@ -1,10 +1,12 @@
-<section class="container-fluid position-relative text-center">
-    <h1 class="p-5 position-absolute top-50 start-50 translate-middle text-light restaurant-name">{{restaurantName}}</h1>
-    <img class="img-banner img-fluid" src="assets/banner-img-res.svg" alt="">
+<section class="container-fluid text-center banner">
+    <h1 class="p-5 text-light m-0">Eliminar</h1>
 </section>
 
+<section class="container-fluid m-0 p-0">
+    <div class="container-fluid py-4 px-5 m-0 banner2">
+        <p class="text-light fs-1">¿Que producto desea eliminar?</p>
+    </div>
 
-  <section class="container-fluid m-0 p-0">
     <div class="container-fluid my-5 mx-0">
         <div id="productCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -18,29 +20,30 @@
                                     <h5 class="card-title">{{ product.name }}</h5>
                                     <p class="card-text">{{ product.description }}</p>
                                     <h4 class="card-title">$ {{ product.price }}</h4>
-                                    <button class="btn btn-success fw-semibold fs-5" routerLink="/confirmar/{{product.id}}">Comprar</button>
+                                    <button class="btn btn-danger fw-semibold fs-5">Eliminar</button>
                                 </div>
-                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3" [alt]="product.name">  
-                                <!-- [src]="product.image" -->
+                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3"
+                                    [alt]="product.name">
+
 
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Controles del Carousel -->
-            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button" data-bs-target="#productCarousel" data-bs-slide="prev" >
+
+            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
-            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon " aria-hidden="true"></span>
             </button>
         </div>
     </div>
 
 </section>
-
-<app-slide-restaurantes></app-slide-restaurantes>

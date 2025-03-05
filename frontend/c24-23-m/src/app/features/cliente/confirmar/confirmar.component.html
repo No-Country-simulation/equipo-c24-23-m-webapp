@@ -1,0 +1,42 @@
+<section class="container-fluid text-center banner">
+    <h1 class="p-5 text-light">Confirmar</h1>
+</section>
+
+<section class="container-fluid text-center d-flex justify-content-center py-5">
+    <div class="row">
+        <div class="card-confirm">
+            <div class="card d-flex flex-row p-5">
+
+                <div class="card-body text-start" *ngIf="product">
+                    <h5 class="card-title fs-1">{{ product.name }}</h5>
+                    <p class="card-text fs-4 text-secondary-emphasis">{{ product.description }}</p>
+                    <p class="fs-4 text-secondary-emphasis"><strong>Precio:</strong> ${{ product.price }}</p>
+                    <p class="fs-4 text-secondary-emphasis"><strong>Envío:</strong>${{envio}}</p>
+                    <label class="fs-4 text-secondary-emphasis" for="cantidad"><strong>Cantidad:</strong> </label>
+                    <!-- <input type="number" id="cantidad" min="1" [(ngModel)]="cantidad" />
+                    <p><strong>Total:</strong> ${{ product.price * cantidad + 500 }}</p> -->
+                    <input class="fs-4 text-secondary-emphasis input-confirm mb-3" type="number" id="cantidad" min="1"
+                        [formControl]="cantidad" />
+
+                    <p class="fs-4 text-secondary-emphasis"><strong>Total:</strong> ${{ total }}</p>
+
+                    <label class="fs-4 text-secondary-emphasis" for="direccion"><strong>Direccion: </strong> </label>
+                    <input class="fs-4 text-secondary-emphasis mb-3" type="text" id="direccion" [formControl]="direccion" />
+                    <div class="text-danger" *ngIf="direccion.invalid && direccion.touched">
+                        La dirección es obligatoria
+                    </div>
+
+                    <br>
+                    <button (click)="pagarConMercadoPago()" class="btn btn-success fw-semibold fs-5 px-4 py-3">
+                        Pagar ${{ total }} con MercadoPago
+                    </button>
+                </div>
+
+                <img src="assets/burger-product.svg" class="card-img-top product-img m-3" [alt]="product.name">
+                <!-- [src]="product.image" -->
+
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -13,7 +13,7 @@ export class HeaderComponent {
 
   constructor(private router: Router) {}
 
-  userRole: string = 'cliente'; // Guardará el rol del usuario
+  userRole: string = 'restaurante'; // Guardará el rol del usuario
 
   nombreUsuario: string = 'Joaquin'  // nombre del cliente restaurante o repartidor
 

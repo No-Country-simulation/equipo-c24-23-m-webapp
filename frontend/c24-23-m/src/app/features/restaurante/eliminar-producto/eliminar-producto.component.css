@@ -1,9 +1,24 @@
-.restaurant-name{
+.banner{
+    background-color: #F69309;
+}
+.banner h1{
     font-weight: bolder;
     font-style: italic;
-    -webkit-text-stroke: 2px black;
-    font-size: 5rem;
+}
+.banner2{
+    background-color: #303030;
+    font-weight: bolder;
+    font-style: italic;
 
+}
+.card-confirm{
+    width: 60vw;
+}
+.card-confirm img{
+    width: 300px;
+}
+.input-confirm{
+    width: 50px;
 }
 
 .product-img{
@@ -17,12 +32,4 @@
     width: min-content;
     background-color: white;
     border-radius: 50%;
-}
-
-.banner{
-    background-color: #303030;
-}
-.banner p {
-    font-weight: bolder;
-    font-style: italic;
 }

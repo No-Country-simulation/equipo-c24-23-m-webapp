@@ -1,1 +1,147 @@
-<p>home-restaurante works!</p>
+<section class="container-fluid row m-0 p-0 ">
+
+    <div class="col-6 first-section p-0 position-relative">
+        <div class="d-flex flex-row p-5">
+            <h1 class="text-nowrap ps-5 pt-3">Hace</h1>
+            <h1 class="text-nowrap px-3 saborea pt-3">crecer</h1>
+            <h1 class="text-nowrap despues pt-3">tu negocio.</h1>
+        </div>
+        <img src="assets/comida-portada.png" alt="" class="position-absolute bottom-0 end-0 px-5">
+        <button
+            class="px-5 py-2 fs-4 btn-pedidos text-light position-absolute bottom-0 start-0 fst-italic text-center">Agrega
+            un producto</button>
+    </div>
+
+    <div class="col-6 p-0">
+        <img src="assets/bolsa-portada.png" alt="" class="portada">
+    </div>
+
+</section>
+
+<section class="container-fluid m-0 p-0">
+
+    <div class="container-fluid productos-banner py-4 px-5 m-0 banner">
+        <p class="text-light fs-1 ">Tus Productos</p>
+    </div>
+
+    <div class="container-fluid my-5 mx-0">
+        <div id="productCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div *ngFor="let group of getProductGroups(); let first = first" class="carousel-item"
+                    [ngClass]="{'active': first}">
+                    <div class="row">
+                        <div *ngFor="let product of group" class="col-md-4">
+                            <div class="card d-flex flex-row">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <h4 class="card-title">$ {{ product.price }}</h4>
+                                </div>
+                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3"
+                                    [alt]="product.name">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<section class="container-fluid d-flex justify-content-center mb-5">
+
+    <div class="d-flex flex-row">
+
+        <div class="d-flex flex-column">
+            <button class="btn btn-success p-3"><img src="assets/add.svg" alt="" routerLink="/agregar-producto"></button>
+            <h2 class="m-3">Agregar</h2>
+        </div>
+
+        <div class="d-flex flex-column mx-5">
+            <button class="btn btn-primary p-3"><img src="assets/actualizar.svg" alt=""></button>
+            <h2 class="m-3">Actualizar</h2>
+        </div>
+
+        <div class="d-flex flex-column">
+            <button class="btn btn-danger p-3"><img src="assets/delete.svg" alt="" routerLink="/eliminar-producto"></button>
+            <h2 class="m-3">Eliminar</h2>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container-fluid row">
+
+
+    <section class="col d-flex justify-content-center flex-wrap">
+        <!-- Pedidos Vigentes -->
+        <h2 class="mt-5 text-center titles"> Pedidos en curso</h2>
+
+        <div class="list-group my-5 col-9">
+            <div *ngFor="let pedido of pedidosVigentes" class="list-group-item position-relative card">
+
+                <div class="card-body">
+                    <p class="card-title fs-5"><strong>Pedido #{{ pedido.idPedido }}</strong></p>
+                    <p class="card-title fs-5 fw-semibold">Producto: {{ pedido.name }}</p>
+                    <p class="card-text fs-5">Cliente ID: {{ pedido.idCliente }}</p>
+                    <p class="card-text fs-5">Repartidor: {{ pedido.idRepartidor ? pedido.idRepartidor : 'No asignado' }}</p>
+                    <p class="card-text fs-5">Dirección: {{ pedido.direccion }}</p>
+                    <p class="card-title fs-5 fw-semibold">Estado: <span [ngClass]="{
+                  'text-warning': pedido.estado === 'PENDIENTE',
+                  'text-primary': pedido.estado === 'EN PREPARACION' || pedido.estado === 'LISTO',
+                  'text-info': pedido.estado === 'EN CAMINO'
+                }">{{ pedido.estado }}</span></p>
+                    <p class="card-text fs-5">Fecha: {{ pedido.fecha }}</p>
+                    <p class="card-title fs-5 fw-semibold">Hora: {{ pedido.hora }}</p>
+                </div>
+                <img src="assets/burger-product.svg" class="card-img-top product-img m-3 position-absolute top-0 end-0">
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="col d-flex justify-content-center flex-wrap align-self-start">
+        <!-- Historial de Pedidos -->
+        <h2 class="mt-5 text-center titles"> Historial de Pedidos</h2>
+        <div class="list-group my-5 col-9">
+            <div *ngFor="let pedido of historialPedidos" class="list-group-item card">
+
+                <div class="card-body">
+                    <p class="card-title  fs-5"><strong>Pedido #{{ pedido.idPedido }}</strong></p>
+                    <p class="card-title  fs-5  fw-semibold">Producto: {{ pedido.name }}</p>
+                    <p class="card-text  fs-5">Cliente ID: {{ pedido.idCliente }}</p>
+                    <p class="card-text  fs-5">Repartidor: {{ pedido.idRepartidor ? pedido.idRepartidor : 'No asignado' }}</p>
+                    <p class="card-text  fs-5">Dirección: {{ pedido.direccion }}</p>
+                    <p class="card-title  fs-5  fw-semibold">Estado: <span [ngClass]="{
+                  'text-success': pedido.estado === 'ENTREGADO',
+                  'text-danger': pedido.estado === 'RECHAZADO'
+                }">{{ pedido.estado }}</span></p>
+                    <p class="card-text  fs-5">Fecha: {{ pedido.fecha }}</p>
+                    <p class="card-title  fs-5  fw-semibold">Hora: {{ pedido.hora }}</p>
+                </div>
+                <img src="assets/burger-product.svg" class="card-img-top product-img m-3 position-absolute top-0 end-0">
+
+            </div>
+        </div>
+    </section>
+
+
+</section>
