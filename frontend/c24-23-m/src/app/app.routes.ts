@@ -10,6 +10,9 @@ import { PedidoComponent } from './features/cliente/pedido/pedido.component';
 import { HomeRestauranteComponent } from './features/restaurante/home-restaurante/home-restaurante.component';
 import { AgregarProductoComponent } from './features/restaurante/agregar-producto/agregar-producto.component';
 import { EliminarProductoComponent } from './features/restaurante/eliminar-producto/eliminar-producto.component';
+import { ElegirActualizarComponent } from './features/restaurante/elegir-actualizar/elegir-actualizar.component';
+import { ActualizarProductoComponent } from './features/restaurante/actualizar-producto/actualizar-producto.component';
+import { PedidosRestauranteComponent } from './features/restaurante/pedidos-restaurante/pedidos-restaurante.component';
 
 export const routes: Routes = [
   {path: '',  redirectTo: 'home-clientes', pathMatch: 'full'},
@@ -24,7 +27,10 @@ export const routes: Routes = [
   // {path: 'pedido/:id', component: PedidoComponent  },
   {path: 'home-restaurantes/:id', component: HomeRestauranteComponent},
   {path: 'agregar-producto', component: AgregarProductoComponent},
-  {path: 'eliminar-producto/:id', component: EliminarProductoComponent}
+  {path: 'eliminar-producto/:id', component: EliminarProductoComponent},
+  {path: 'elegir-actualizar/:id', component: ElegirActualizarComponent},
+  {path: 'actualizar-producto/:id', component: ActualizarProductoComponent},
+  {path: 'pedidos-restaurante/:id', component:PedidosRestauranteComponent}
   
   
 ];

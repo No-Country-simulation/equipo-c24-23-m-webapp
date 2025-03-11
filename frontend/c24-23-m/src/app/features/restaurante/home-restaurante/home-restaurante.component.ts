@@ -14,6 +14,7 @@ export const pedidos = [
     estado: "PENDIENTE",
     fecha: "2025-03-10",
     hora: "12:30 PM",
+    precio:allRestaurants[0].products[0].price,
     imagen: allRestaurants[0].products[0].image
   },
   {
@@ -26,6 +27,7 @@ export const pedidos = [
     estado: "EN PREPARACION",
     fecha: "2025-03-10",
     hora: "1:00 PM",
+    precio:allRestaurants[0].products[1].price,
     imagen: allRestaurants[0].products[1].image
   },
   {
@@ -38,6 +40,7 @@ export const pedidos = [
     estado: "LISTO",
     fecha: "2025-03-10",
     hora: "1:30 PM",
+    precio:allRestaurants[1].products[0].price,
     imagen: allRestaurants[1].products[0].image
   },
   {
@@ -50,6 +53,7 @@ export const pedidos = [
     estado: "EN CAMINO",
     fecha: "2025-03-10",
     hora: "2:00 PM",
+    precio:allRestaurants[1].products[1].price,
     imagen: allRestaurants[1].products[1].image
   },
   {
@@ -62,6 +66,7 @@ export const pedidos = [
     estado: "ENTREGADO",
     fecha: "2025-03-10",
     hora: "2:30 PM",
+    precio:allRestaurants[2].products[0].price,
     imagen: allRestaurants[2].products[0].image
   },
   {
@@ -74,7 +79,88 @@ export const pedidos = [
     estado: "RECHAZADO",
     fecha: "2025-03-10",
     hora: "3:00 PM",
+    precio:allRestaurants[2].products[1].price,
     imagen: allRestaurants[2].products[1].image
+  },
+  // Pedidos adicionales con "EN PREPARACIÓN"
+  {
+    idPedido: 7,
+    idProducto: allRestaurants[0].products[2].id,
+    idCliente: 107,
+    idRepartidor: 205,
+    name: allRestaurants[0].products[2].name,
+    direccion: "Av. Principal 789",
+    estado: "EN PREPARACION",
+    fecha: "2025-03-10",
+    hora: "3:30 PM",
+    precio:allRestaurants[0].products[2].price,
+    imagen: allRestaurants[0].products[2].image
+  },
+  {
+    idPedido: 8,
+    idProducto: allRestaurants[1].products[2].id,
+    idCliente: 108,
+    idRepartidor: 206,
+    name: allRestaurants[1].products[2].name,
+    direccion: "Calle Norte 101",
+    estado: "EN PREPARACION",
+    fecha: "2025-03-10",
+    hora: "4:00 PM",
+    precio:allRestaurants[1].products[2].price,
+    imagen: allRestaurants[1].products[2].image
+  },
+  {
+    idPedido: 9,
+    idProducto: allRestaurants[2].products[2].id,
+    idCliente: 109,
+    idRepartidor: 207,
+    name: allRestaurants[2].products[2].name,
+    direccion: "Zona Oeste 555",
+    estado: "EN PREPARACION",
+    fecha: "2025-03-10",
+    hora: "4:30 PM",
+    precio:allRestaurants[2].products[2].price,
+    imagen: allRestaurants[2].products[2].image
+  },
+  // Pedidos adicionales con "PENDIENTE"
+  {
+    idPedido: 10,
+    idProducto: allRestaurants[1].products[3].id,
+    idCliente: 110,
+    idRepartidor: null,
+    name: allRestaurants[1].products[3].name,
+    direccion: "Av. Central 222",
+    estado: "PENDIENTE",
+    fecha: "2025-03-10",
+    hora: "5:00 PM",
+    precio:allRestaurants[1].products[3].price,
+    imagen: allRestaurants[1].products[3].image
+  },
+  {
+    idPedido: 11,
+    idProducto: allRestaurants[2].products[3].id,
+    idCliente: 111,
+    idRepartidor: null,
+    name: allRestaurants[2].products[3].name,
+    direccion: "Calle Este 333",
+    estado: "PENDIENTE",
+    fecha: "2025-03-10",
+    hora: "5:30 PM",
+    precio:allRestaurants[2].products[3].price,
+    imagen: allRestaurants[2].products[3].image
+  },
+  {
+    idPedido: 12,
+    idProducto: allRestaurants[0].products[3].id,
+    idCliente: 112,
+    idRepartidor: null,
+    name: allRestaurants[0].products[3].name,
+    direccion: "Sector Industrial 444",
+    estado: "PENDIENTE",
+    fecha: "2025-03-10",
+    hora: "6:00 PM",
+    precio:allRestaurants[0].products[3].price,
+    imagen: allRestaurants[0].products[3].image
   }
 ];
 

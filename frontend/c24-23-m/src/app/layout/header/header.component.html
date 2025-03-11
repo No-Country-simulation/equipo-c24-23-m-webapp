@@ -23,7 +23,7 @@
         
               <ng-container *ngIf="userRole === 'restaurante'">
                 <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-restaurantes">Inicio</a></li>
-                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/pedidos-restaurante">Pedidos</a></li>
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" [routerLink]="['/pedidos-restaurante', restauranteId]">Pedidos</a></li>
               </ng-container>
         
               <ng-container *ngIf="userRole === 'repartidor'">

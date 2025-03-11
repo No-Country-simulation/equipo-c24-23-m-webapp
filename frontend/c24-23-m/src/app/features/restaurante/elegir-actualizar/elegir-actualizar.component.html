@@ -1,10 +1,10 @@
 <section class="container-fluid text-center banner">
-    <h1 class="p-5 text-light m-0">Eliminar</h1>
+    <h1 class="p-5 text-light m-0">Actualizar</h1>
 </section>
 
 <section class="container-fluid m-0 p-0">
     <div class="container-fluid py-4 px-5 m-0 banner2">
-        <p class="text-light fs-1">{{restaurante.name}} - ¿Que producto desea eliminar?</p>
+        <p class="text-light fs-1">{{restaurante.name}} - ¿Que producto desea actualizar?</p>
     </div>
 
     <div class="container-fluid my-5 mx-0">
@@ -20,7 +20,7 @@
                                     <h5 class="card-title">{{ product.name }}</h5>
                                     <p class="card-text">{{ product.description }}</p>
                                     <h4 class="card-title">$ {{ product.price }}</h4>
-                                    <button class="btn btn-danger fw-semibold fs-5">Eliminar</button>
+                                    <button class="btn btn-primary fw-semibold fs-5" routerLink="/actualizar-producto/{{product.id}}">Actualizar</button>
                                 </div>
                                 <img src="assets/burger-product.svg" class="card-img-top product-img m-3"
                                     [alt]="product.name">

@@ -21,7 +21,7 @@
 <section class="container-fluid m-0 p-0">
 
     <div class="container-fluid productos-banner py-4 px-5 m-0 banner">
-        <p class="text-light fs-1 ">Tus Productos</p>
+        <p class="text-light fs-1 ">{{restaurante.name}} - Tus Productos</p>
     </div>
 
     <div class="container-fluid my-5 mx-0">
@@ -69,17 +69,17 @@
     <div class="d-flex flex-row">
 
         <div class="d-flex flex-column">
-            <button class="btn btn-success p-3"><img src="assets/add.svg" alt="" routerLink="/agregar-producto"></button>
+            <button class="btn btn-success p-3" routerLink="/agregar-producto"><img src="assets/add.svg" alt="" ></button>
             <h2 class="m-3">Agregar</h2>
         </div>
 
         <div class="d-flex flex-column mx-5">
-            <button class="btn btn-primary p-3"><img src="assets/actualizar.svg" alt=""></button>
+            <button class="btn btn-primary p-3" routerLink="/elegir-actualizar/{{restaurante.id}}"><img src="assets/actualizar.svg" alt=""></button>
             <h2 class="m-3">Actualizar</h2>
         </div>
 
         <div class="d-flex flex-column">
-            <button class="btn btn-danger p-3"><img src="assets/delete.svg" alt="" routerLink="/eliminar-producto"></button>
+            <button class="btn btn-danger p-3" routerLink="/eliminar-producto/{{restaurante.id}}"><img src="assets/delete.svg" alt="" ></button>
             <h2 class="m-3">Eliminar</h2>
         </div>
 
