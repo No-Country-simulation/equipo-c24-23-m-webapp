@@ -16,26 +16,25 @@ import { PedidosRestauranteComponent } from './features/restaurante/pedidos-rest
 import { HomeRepartidorComponent } from './features/repartidor/home-repartidor/home-repartidor.component';
 import path from 'path';
 import { PedidosRepartidorComponent } from './features/repartidor/pedidos-repartidor/pedidos-repartidor.component';
+import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
-  // CLIENTE
   {path: '',  redirectTo: 'home-clientes', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'main', component: MainComponent},
   {path: 'home-clientes', component: HomeClienteComponent},
-  {path: 'restaurantes-clientes', component:RestaurantesComponent},
-  {path: 'menu/:id', component: RestauranteMenuComponent },
+  {path: 'restaurantes-clientes', component: RestaurantesComponent},
+  {path: 'menu/:id', component: RestauranteMenuComponent},
   {path: 'confirmar/:id', component: ConfirmarComponent },
   {path: 'pedidos-clientes', component: PedidoComponent  },
-  // RESTAURANTE
-  {path: 'home-restaurantes/:id', component: HomeRestauranteComponent},
+  {path: 'home-restaurantes/:id', component: HomeRestauranteComponent },
   {path: 'agregar-producto', component: AgregarProductoComponent},
-  {path: 'eliminar-producto/:id', component: EliminarProductoComponent},
-  {path: 'elegir-actualizar/:id', component: ElegirActualizarComponent},
-  {path: 'actualizar-producto/:id', component: ActualizarProductoComponent},
-  {path: 'pedidos-restaurante/:id', component:PedidosRestauranteComponent},
-  // REPARTIDOR
+  {path: 'eliminar-producto/:id', component: EliminarProductoComponent },
+  {path: 'elegir-actualizar/:id', component: ElegirActualizarComponent },
+  {path: 'actualizar-producto/:id', component: ActualizarProductoComponent },
+  {path: 'pedidos-restaurante/:id', component: PedidosRestauranteComponent },
   {path: 'home-repartidores', component: HomeRepartidorComponent},
   {path: 'pedidos-repartidor', component: PedidosRepartidorComponent},
 ];
+
