@@ -1,0 +1,6 @@
+[build]
+  command = "npm install && npx ng build --configuration=production"
+  publish = "dist/c24-23-m"
+
+[build.environment]
+  NODE_VERSION = "18"
