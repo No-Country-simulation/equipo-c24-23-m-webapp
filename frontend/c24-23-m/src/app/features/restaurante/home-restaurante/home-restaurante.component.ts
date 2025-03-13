@@ -161,7 +161,60 @@ export const pedidos = [
     hora: "6:00 PM",
     precio:allRestaurants[0].products[3].price,
     imagen: allRestaurants[0].products[3].image
+  },
+  {
+    idPedido: 13,
+    idProducto: allRestaurants[3].products[0].id,
+    idCliente: 113,
+    idRepartidor: 208,
+    name: allRestaurants[3].products[0].name,
+    direccion: "Calle Delta 555",
+    estado: "LISTO",
+    fecha: "2025-03-10",
+    hora: "6:30 PM",
+    precio: allRestaurants[3].products[0].price,
+    imagen: allRestaurants[3].products[0].image
+  },
+  {
+    idPedido: 14,
+    idProducto: allRestaurants[4].products[1].id,
+    idCliente: 114,
+    idRepartidor: 209,
+    name: allRestaurants[4].products[1].name,
+    direccion: "Avenida San Martín 678",
+    estado: "LISTO",
+    fecha: "2025-03-10",
+    hora: "7:00 PM",
+    precio: allRestaurants[4].products[1].price,
+    imagen: allRestaurants[4].products[1].image
+  },
+  {
+    idPedido: 15,
+    idProducto: allRestaurants[5].products[2].id,
+    idCliente: 115,
+    idRepartidor: 210,
+    name: allRestaurants[5].products[2].name,
+    direccion: "Calle Rivadavia 321",
+    estado: "LISTO",
+    fecha: "2025-03-10",
+    hora: "7:30 PM",
+    precio: allRestaurants[5].products[2].price,
+    imagen: allRestaurants[5].products[2].image
+  },
+  {
+    idPedido: 16,
+    idProducto: allRestaurants[6].products[3].id,
+    idCliente: 116,
+    idRepartidor: 211,
+    name: allRestaurants[6].products[3].name,
+    direccion: "Bulevar de la Ciudad 999",
+    estado: "LISTO",
+    fecha: "2025-03-10",
+    hora: "8:00 PM",
+    precio: allRestaurants[6].products[3].price,
+    imagen: allRestaurants[6].products[3].image
   }
+  
 ];
 
 

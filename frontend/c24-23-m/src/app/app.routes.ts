@@ -13,8 +13,12 @@ import { EliminarProductoComponent } from './features/restaurante/eliminar-produ
 import { ElegirActualizarComponent } from './features/restaurante/elegir-actualizar/elegir-actualizar.component';
 import { ActualizarProductoComponent } from './features/restaurante/actualizar-producto/actualizar-producto.component';
 import { PedidosRestauranteComponent } from './features/restaurante/pedidos-restaurante/pedidos-restaurante.component';
+import { HomeRepartidorComponent } from './features/repartidor/home-repartidor/home-repartidor.component';
+import path from 'path';
+import { PedidosRepartidorComponent } from './features/repartidor/pedidos-repartidor/pedidos-repartidor.component';
 
 export const routes: Routes = [
+  // CLIENTE
   {path: '',  redirectTo: 'home-clientes', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -24,13 +28,14 @@ export const routes: Routes = [
   {path: 'menu/:id', component: RestauranteMenuComponent },
   {path: 'confirmar/:id', component: ConfirmarComponent },
   {path: 'pedidos-clientes', component: PedidoComponent  },
-  // {path: 'pedido/:id', component: PedidoComponent  },
+  // RESTAURANTE
   {path: 'home-restaurantes/:id', component: HomeRestauranteComponent},
   {path: 'agregar-producto', component: AgregarProductoComponent},
   {path: 'eliminar-producto/:id', component: EliminarProductoComponent},
   {path: 'elegir-actualizar/:id', component: ElegirActualizarComponent},
   {path: 'actualizar-producto/:id', component: ActualizarProductoComponent},
-  {path: 'pedidos-restaurante/:id', component:PedidosRestauranteComponent}
-  
-  
+  {path: 'pedidos-restaurante/:id', component:PedidosRestauranteComponent},
+  // REPARTIDOR
+  {path: 'home-repartidores', component: HomeRepartidorComponent},
+  {path: 'pedidos-repartidor', component: PedidosRepartidorComponent},
 ];

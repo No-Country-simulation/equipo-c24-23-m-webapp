@@ -22,14 +22,22 @@
               </ng-container>
         
               <ng-container *ngIf="userRole === 'restaurante'">
-                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-restaurantes">Inicio</a></li>
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-restaurantes/{{restauranteId}}">Inicio</a></li>
                 <li><a class="nav-link text-light fs-3 fw-semibold mx-5" [routerLink]="['/pedidos-restaurante', restauranteId]">Pedidos</a></li>
               </ng-container>
         
               <ng-container *ngIf="userRole === 'repartidor'">
-                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-repartidor">Inicio</a></li>
+                <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/home-repartidores">Inicio</a></li>
                 <li><a class="nav-link text-light fs-3 fw-semibold mx-5" routerLink="/pedidos-repartidor">Pedidos</a></li>
               </ng-container>
+
+              
+              <li><a class="nav-link text-light fs-5 fw-semibold mx-5 mt-5" (click)="cambiarRol('cliente')">Cambiar a Cliente</a></li>
+              <li><a class="nav-link text-light fs-5 fw-semibold mx-5" (click)="cambiarRol('restaurante')">Cambiar a Restaurante</a></li>
+              <li><a class="nav-link text-light fs-5 fw-semibold mx-5" (click)="cambiarRol('repartidor')">Cambiar a Repartidor</a></li>
+
+              <li><p class="mt-5 text-light fs-5 fw-semibold mx-5">Rol actual: {{ userRole }}</p></li>
+
         
               <li><button (click)="logout()" class="nav-link mx-5 mt-5 text-light fs-3 fw-semibold botonSalir py-2 px-4">Salir</button></li>
               

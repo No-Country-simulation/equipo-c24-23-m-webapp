@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { allRestaurants } from '../../features/cliente/restaurante-menu/restaurante-menu.component';
+import { AuthServiceService } from '../../auth/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent {
 
   // constructor(private router: Router,private route: ActivatedRoute) {}
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthServiceService) {
     // Obtener ID desde la URL
     this.router.events.subscribe(() => {
       const urlSegments = this.router.url.split('/');
@@ -25,7 +26,19 @@ export class HeaderComponent {
     });
   }
 
-  userRole: string = 'restaurante'; // Guardará el rol del usuario
+  userRole: string = '';
+
+
+  ngOnInit() {
+    this.authService.currentRole.subscribe((rol: string) => {
+      this.userRole = rol;
+    });
+  }
+
+  cambiarRol(nuevoRol: string) {
+    this.authService.cambiarRol(nuevoRol);
+  }
+
 
   nombreUsuario: string = 'Joaquin'  // nombre del cliente restaurante o repartidor
 

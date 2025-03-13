@@ -1,1 +1,126 @@
-<p>home-repartidor works!</p>
+<section class="container-fluid row m-0 p-0 ">
+
+    <div class="col-6 first-section p-0 position-relative">
+        <div class="d-flex flex-row p-5">
+            <h1 class="text-nowrap ps-5 pt-3">Genera</h1>
+            <h1 class="text-nowrap px-3 saborea pt-3">ganancias</h1>
+            <h1 class="text-nowrap despues pt-3">con tu vehiculo.</h1>
+        </div>
+        <img src="assets/comida-portada.png" alt="" class="position-absolute bottom-0 end-0 px-5">
+        <button
+            class="px-5 py-2 fs-4 btn-pedidos text-light position-absolute bottom-0 start-0 fst-italic text-center">Ver pedidos</button>
+    </div>
+
+    <div class="col-6 p-0">
+        <img src="assets/bolsa-portada.png" alt="" class="portada">
+    </div>
+
+</section>
+
+<section class="container-fluid m-0 p-0">
+    <div class="container-fluid py-4 px-5 m-0 banner2">
+        <p class="text-light fs-1">Pedidos en curso</p>
+    </div>
+
+    <div class="container-fluid my-5 mx-0">
+        <div id="productCarouselPendientes" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div *ngFor="let group of getPedidosCursoGroups(); let first = first" class="carousel-item"
+                    [ngClass]="{'active': first}">
+                    <div class="row">
+                        <div *ngFor="let pedido of group" class="col-md-4">
+                            <div class="card d-flex flex-row">
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-title fs-5"><strong>Pedido #{{ pedido.idPedido }}</strong></p>
+                                    <h5 class="card-title">{{ pedido.name }}</h5>
+                                    <p class="card-text fs-5">Dirección: {{ pedido.direccion }}</p>
+                                    <h4 class="card-title">$ {{ pedido.precio }}</h4>
+                                    <p class="card-title fs-5 fw-semibold">Estado: <span [ngClass]="{
+                                        'text-warning': pedido.estado === 'PENDIENTE',
+                                        'text-primary': pedido.estado === 'EN PREPARACION' || pedido.estado === 'LISTO',
+                                        'text-info': pedido.estado === 'EN CAMINO'
+                                      }">{{ pedido.estado }}</span></p>
+                                    <p class="card-text fs-5">Fecha: {{ pedido.fecha }}</p>
+                                    <p class="card-title fs-5 fw-semibold">Hora: {{ pedido.hora }}</p>
+                                    <button class="btn btn-primary fw-semibold fs-5"routerLink="/pedidos-repartidor">Ver</button>
+                                </div>
+                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3"
+                                    [alt]="pedido.name">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPendientes" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPendientes" data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<section class="container-fluid m-0 p-0">
+    <div class="container-fluid py-4 px-5 m-0 banner2">
+        <p class="text-light fs-1">Por asignar Repartidor</p>
+    </div>
+
+    <div class="container-fluid my-5 mx-0">
+        <div id="productCarouselPreparacion" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div *ngFor="let group of getPedidosAsignarGroups(); let first = first" class="carousel-item"
+                    [ngClass]="{'active': first}">
+                    <div class="row">
+                        <div *ngFor="let pedido of group" class="col-md-4">
+                            <div class="card d-flex flex-row">
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-title fs-5"><strong>Pedido #{{ pedido.idPedido }}</strong></p>
+                                    <h5 class="card-title">{{ pedido.name }}</h5>
+                                    <p class="card-text fs-5">Dirección: {{ pedido.direccion }}</p>
+                                    <h4 class="card-title">$ {{ pedido.precio }}</h4>
+                                    <p class="card-title fs-5 fw-semibold">Estado: <span [ngClass]="{
+                                        'text-warning': pedido.estado === 'PENDIENTE',
+                                        'text-primary': pedido.estado === 'EN PREPARACION' || pedido.estado === 'LISTO',
+                                        'text-info': pedido.estado === 'EN CAMINO'
+                                      }">{{ pedido.estado }}</span></p>
+                                    <p class="card-text fs-5">Fecha: {{ pedido.fecha }}</p>
+                                    <p class="card-title fs-5 fw-semibold">Hora: {{ pedido.hora }}</p>
+                                    <button class="btn btn-success fw-semibold fs-5">Entregar</button>
+                                </div>
+                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3"
+                                    [alt]="pedido.name">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPreparacion" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPreparacion" data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+</section>
