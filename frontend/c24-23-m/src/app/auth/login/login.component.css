@@ -1,0 +1,32 @@
+.btn-google {
+  color: #545454;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 1px #ddd;
+  border-radius: 5px;
+}
+
+.or-container {
+  align-items: center;
+  color: #ccc;
+  display: flex;
+  margin: 25px 0;
+}
+
+.line-separator {
+  background-color: #ccc;
+  flex-grow: 5;
+  height: 1px;
+}
+
+.or-label {
+  flex-grow: 1;
+  margin: 0 15px;
+  text-align: center;
+}
+
+.btn-google:hover {
+
+  background-color: #C23B33;
+  border-color: #C23B33;
+  color: #ffffff;
+}

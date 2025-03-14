@@ -1,0 +1,27 @@
+.banner{
+    background-color: #F69309;
+}
+.banner h1{
+    font-weight: bolder;
+    font-style: italic;
+}
+.card-confirm{
+    width: 60vw;
+}
+.card-confirm img{
+    width: 300px;
+}
+.input-confirm{
+    width: 50px;
+}
+
+.text-rojo{
+    color: #B51A1A !important;
+}
+.text-azul{
+    color: #1A4BB5 !important;
+}
+.text-verde{
+    color: #53B51A !important;
+
+}

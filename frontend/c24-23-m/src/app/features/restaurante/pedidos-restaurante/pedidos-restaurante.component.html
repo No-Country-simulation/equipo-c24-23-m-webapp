@@ -1,0 +1,115 @@
+<section class="container-fluid text-center banner py-3">
+    <h1 class="p-5 text-light m-0">{{restaurante.name}}</h1>
+</section>
+
+<section class="container-fluid m-0 p-0">
+    <div class="container-fluid py-4 px-5 m-0 banner2">
+        <p class="text-light fs-1">Pendientes</p>
+    </div>
+
+    <div class="container-fluid my-5 mx-0">
+        <div id="productCarouselPendientes" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div *ngFor="let group of getPedidosPGroups(); let first = first" class="carousel-item"
+                    [ngClass]="{'active': first}">
+                    <div class="row">
+                        <div *ngFor="let pedido of group" class="col-md-4">
+                            <div class="card d-flex flex-row">
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-title fs-5"><strong>Pedido #{{ pedido.idPedido }}</strong></p>
+                                    <h5 class="card-title">{{ pedido.name }}</h5>
+                                    <p class="card-text">{{ pedido.description }}</p>
+                                    <p class="card-text fs-5">Dirección: {{ pedido.direccion }}</p>
+                                    <h4 class="card-title">$ {{ pedido.precio }}</h4>
+                                    <p class="card-title fs-5 fw-semibold">Estado: <span [ngClass]="{
+                                        'text-warning': pedido.estado === 'PENDIENTE',
+                                        'text-primary': pedido.estado === 'EN PREPARACION' || pedido.estado === 'LISTO',
+                                        'text-info': pedido.estado === 'EN CAMINO'
+                                      }">{{ pedido.estado }}</span></p>
+                                    <p class="card-text fs-5">Fecha: {{ pedido.fecha }}</p>
+                                    <p class="card-title fs-5 fw-semibold">Hora: {{ pedido.hora }}</p>
+                                    <button class="btn btn-danger fw-semibold fs-5 my-3">Rechazar</button>
+                                    <button class="btn btn-success fw-semibold fs-5">Aceptar</button>
+                                </div>
+                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3"
+                                    [alt]="pedido.name">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPendientes" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPendientes" data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<section class="container-fluid m-0 p-0">
+    <div class="container-fluid py-4 px-5 m-0 banner2">
+        <p class="text-light fs-1">En preparacion</p>
+    </div>
+
+    <div class="container-fluid my-5 mx-0">
+        <div id="productCarouselPreparacion" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div *ngFor="let group of getPedidosEGroups(); let first = first" class="carousel-item"
+                    [ngClass]="{'active': first}">
+                    <div class="row">
+                        <div *ngFor="let pedido of group" class="col-md-4">
+                            <div class="card d-flex flex-row">
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-title fs-5"><strong>Pedido #{{ pedido.idPedido }}</strong></p>
+                                    <h5 class="card-title">{{ pedido.name }}</h5>
+                                    <p class="card-text">{{ pedido.description }}</p>
+                                    <p class="card-text fs-5">Dirección: {{ pedido.direccion }}</p>
+                                    <h4 class="card-title">$ {{ pedido.precio }}</h4>
+                                    <p class="card-title fs-5 fw-semibold">Estado: <span [ngClass]="{
+                                        'text-warning': pedido.estado === 'PENDIENTE',
+                                        'text-primary': pedido.estado === 'EN PREPARACION' || pedido.estado === 'LISTO',
+                                        'text-info': pedido.estado === 'EN CAMINO'
+                                      }">{{ pedido.estado }}</span></p>
+                                    <p class="card-text fs-5">Fecha: {{ pedido.fecha }}</p>
+                                    <p class="card-title fs-5 fw-semibold">Hora: {{ pedido.hora }}</p>
+                                    <button class="btn btn-success fw-semibold fs-5">Listo</button>
+                                </div>
+                                <img src="assets/burger-product.svg" class="card-img-top product-img m-3"
+                                    [alt]="pedido.name">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="carousel-control-prev btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPreparacion" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next btn-carousel p-3 mt-5 mx-5" type="button"
+                data-bs-target="#productCarouselPreparacion" data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+</section>
+

@@ -1,0 +1,47 @@
+<section class="container-fluid text-center banner m-0">
+    <h1 class="p-5 text-light m-0">Seguimiento del pedido</h1>
+</section>
+
+<section class="container-fluid p-0 m-0">
+    <div class="container-fluid py-4 px-5 m-0 banner2">
+        <p class="text-light fs-1">Retirar en: {{pedidoEnCurso.nameRes}} - Entregar en: {{pedidoEnCurso.direccion}}</p>
+    </div>
+</section>
+
+<section class="container-fluid text-center d-flex justify-content-center py-5">
+
+    <div class="row">
+        <div class="card-confirm">
+            <div class="card d-flex flex-row p-5">
+
+                <div class="card-body text-start">
+                    <h5 class="card-title fs-1">{{ pedidoEnCurso.name }}</h5>
+
+                    <p class="fs-4">{{pedidoEnCurso.fecha}}</p>
+                    <p class="fs-4">{{pedidoEnCurso.hora}}</p>
+
+                    <p class="card-title fs-4 fw-semibold">Estado: <span [ngClass]="{
+                        'text-warning': pedidoEnCurso.estado === 'PENDIENTE',
+                        'text-primary': pedidoEnCurso.estado === 'EN PREPARACION' || pedidoEnCurso.estado === 'LISTO',
+                        'text-info': pedidoEnCurso.estado === 'EN CAMINO',
+                        'text-success': pedidoEnCurso.estado === 'ENTREGADO',
+                        'text-danger': pedidoEnCurso.estado === 'RECHAZADO'
+                      }">{{ pedidoEnCurso.estado }}</span></p>
+
+                    <button class="btn btn-danger fw-semibold fs-5 px-5 py-3">
+                        Rechazado
+                    </button>
+                    <button class="btn btn-success fw-semibold fs-5 px-5 py-3 mx-5">
+                        Entregado
+                    </button>
+                </div>
+
+                <img src="assets/burger-product.svg" class="card-img-top product-img m-3" [alt]="pedidoEnCurso.name">
+                <!-- [src]="product.image" -->
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

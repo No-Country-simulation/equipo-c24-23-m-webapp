@@ -1,0 +1,12 @@
+[build]
+  base = "frontend/c24-23-m"  # <-- Ruta correcta del proyecto
+  command = "npm install && npx ng build --configuration=production"
+  publish = "dist/c24-23-m/browser"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

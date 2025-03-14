@@ -1,0 +1,72 @@
+<section class="container-fluid text-center banner">
+    <h1 class="p-5 text-light">Agregar</h1>
+</section>
+
+<section class="container-fluid text-center d-flex justify-content-center py-5">
+    <div class="row">
+        <div class="card-confirm">
+            <div class="card d-flex flex-row p-5">
+
+
+                <form [formGroup]="productoForm" (ngSubmit)="onSubmit()" class="form position-relative" >
+
+                    <!-- TÍTULO -->
+                    <div class="mb-3 text-start fs-5">
+                        <label for="titulo">Título:</label>
+                        <input id="titulo" type="text" class="form-control" formControlName="titulo">
+                        <div class="text-danger"
+                            *ngIf="productoForm.controls['titulo'].invalid && productoForm.controls['titulo'].touched">
+                            El título es obligatorio y debe tener al menos 3 caracteres.
+                        </div>
+                    </div>
+
+                    <!-- DESCRIPCIÓN -->
+                    <div class="mb-3  text-start fs-5">
+                        <label for="descripcion">Descripción:</label>
+                        <textarea id="descripcion" class="form-control" formControlName="descripcion"></textarea>
+                        <div class="text-danger"
+                            *ngIf="productoForm.controls['descripcion'].invalid && productoForm.controls['descripcion'].touched">
+                            La descripción es obligatoria y debe tener minimo 10 caracteres y maximo 50.
+                        </div>
+                    </div>
+
+                    <!-- PRECIO -->
+                    <div class="mb-3  text-start fs-5">
+                        <label for="precio">Precio:</label>
+                        <input id="precio" type="number" class="form-control" formControlName="precio">
+                        <div class="text-danger"
+                            *ngIf="productoForm.controls['precio'].invalid && productoForm.controls['precio'].touched">
+                            El precio es obligatorio y debe ser mayor a 0.
+                        </div>
+                    </div>
+
+                    <!-- IMAGEN -->
+                    <div class="mb-3  text-start fs-5">
+                        <label for="imagen">Imagen:</label>
+                        <input id="imagen" type="file" class="form-control" (change)="onImageUpload($event)">
+                        <div class="text-danger"
+                            *ngIf="productoForm.controls['imagen'].invalid && productoForm.controls['imagen'].touched">
+                            Debe subir una imagen.
+                        </div>
+                    </div>
+
+                    <!-- PREVISUALIZACIÓN DE IMAGEN -->
+                    <div *ngIf="imagenPreview" class="position-absolute top-0 end-0 fs-5">
+                        <p>Previsualización:</p>
+                        <img [src]="imagenPreview" alt="Previsualización" width="150" height="150"
+                            class="border rounded">
+                    </div>
+
+                    <!-- BOTÓN ENVIAR -->
+                    <button type="submit" class="btn btn-primary mt-3 fs-5 px-4 py-3" [disabled]="productoForm.invalid">
+                        Crear Producto
+                    </button>
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

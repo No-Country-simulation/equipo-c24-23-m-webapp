@@ -3,5 +3,11 @@
     "@nestjs/config": "^4.0.0",
     "@nestjs/microservices": "^11.0.10",
     "helmet": "^8.0.0"
-  }
+  },
+  "engines": {
+  "node": ">=20"
+},
+"devDependencies": {
+  "@angular/cli": "^17.0.0"
+}
 }

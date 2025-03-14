@@ -1,0 +1,39 @@
+<section class="container-fluid text-center footer-container p-5 pb-2">
+    <div class="d-flex">
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2">Quienes Somos</a></li>
+                <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2">Terminos y Condiciones</a></li>
+                <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2">Privacidad</a></li>
+            </ul>
+        </div>
+
+        <div class="col-6 d-flex justify-content-center align-items-center">
+
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                <ng-container *ngIf="userRole === 'cliente'">
+                    <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2" routerLink="/register">Registra tu negocio</a></li>
+                    <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2" routerLink="/register">Convertite en Repartidor</a></li>
+                </ng-container>
+
+                <ng-container *ngIf="userRole === 'restaurante'">
+                    <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2" routerLink="/register">Hace tu pedido</a></li>
+                    <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2" routerLink="/register">Convertite en Repartidor</a></li>
+                </ng-container>
+
+                <ng-container *ngIf="userRole === 'repartidor'">
+                    <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2" routerLink="/register">Hace tu pedido</a></li>
+                    <li><a href="" class="nav-link text-light fs-5 fw-semibold m-2" routerLink="/register">Registra tu negocio</a></li>
+                </ng-container>
+            </ul>
+
+        </div>
+
+        
+
+    </div>
+    <p class="text-light fs-5 fst-italic mt-4">© 2025 Sabor Express. All rights reserved.</p>
+
+</section>
+

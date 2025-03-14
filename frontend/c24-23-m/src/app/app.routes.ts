@@ -1,3 +1,40 @@
 import { Routes } from '@angular/router';
+import { MainComponent } from './layout/main/main.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { HomeClienteComponent } from './features/cliente/home-cliente/home-cliente.component';
+import { RestaurantesComponent } from './features/cliente/restaurantes/restaurantes.component';
+import { RestauranteMenuComponent } from './features/cliente/restaurante-menu/restaurante-menu.component';
+import { ConfirmarComponent } from './features/cliente/confirmar/confirmar.component';
+import { PedidoComponent } from './features/cliente/pedido/pedido.component';
+import { HomeRestauranteComponent } from './features/restaurante/home-restaurante/home-restaurante.component';
+import { AgregarProductoComponent } from './features/restaurante/agregar-producto/agregar-producto.component';
+import { EliminarProductoComponent } from './features/restaurante/eliminar-producto/eliminar-producto.component';
+import { ElegirActualizarComponent } from './features/restaurante/elegir-actualizar/elegir-actualizar.component';
+import { ActualizarProductoComponent } from './features/restaurante/actualizar-producto/actualizar-producto.component';
+import { PedidosRestauranteComponent } from './features/restaurante/pedidos-restaurante/pedidos-restaurante.component';
+import { HomeRepartidorComponent } from './features/repartidor/home-repartidor/home-repartidor.component';
+import path from 'path';
+import { PedidosRepartidorComponent } from './features/repartidor/pedidos-repartidor/pedidos-repartidor.component';
+import { RenderMode } from '@angular/ssr';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {path: '',  redirectTo: 'home-clientes', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'main', component: MainComponent},
+  {path: 'home-clientes', component: HomeClienteComponent},
+  {path: 'restaurantes-clientes', component: RestaurantesComponent},
+  {path: 'menu/:id', component: RestauranteMenuComponent},
+  {path: 'confirmar/:id', component: ConfirmarComponent },
+  {path: 'pedidos-clientes', component: PedidoComponent  },
+  {path: 'home-restaurantes/:id', component: HomeRestauranteComponent },
+  {path: 'agregar-producto', component: AgregarProductoComponent},
+  {path: 'eliminar-producto/:id', component: EliminarProductoComponent },
+  {path: 'elegir-actualizar/:id', component: ElegirActualizarComponent },
+  {path: 'actualizar-producto/:id', component: ActualizarProductoComponent },
+  {path: 'pedidos-restaurante/:id', component: PedidosRestauranteComponent },
+  {path: 'home-repartidores', component: HomeRepartidorComponent},
+  {path: 'pedidos-repartidor', component: PedidosRepartidorComponent},
+];
+
