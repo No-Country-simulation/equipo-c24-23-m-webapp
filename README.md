@@ -2,6 +2,5 @@
 
 Plataforma de Comida a Domicilio
 
-Para correr el proeycto en Front End es necesario
-
-npm install angular-oauth2-oidc                     //oauth2//
+DEPLOY
+https://67d37abf4abc09000846f7a2--saborexpresss.netlify.app/home-clientes
